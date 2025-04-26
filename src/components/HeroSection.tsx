@@ -1,34 +1,32 @@
+import { StackCloud } from './StackCloud';
+import {DotPattern} from "@/components/magicui/dot-pattern.tsx";
+import {TextAnimate} from "@/components/magicui/text-animate.tsx";
+import {ShinyButton} from "@/components/magicui/shiny-button.tsx";
+import {cn} from "@/lib/utils.ts";
 import { motion } from 'motion/react';
-import {Button} from "@/components/ui/button.tsx";
 
 export default function HeroSection() {
     return (
         <div className="flex justify-center items-center min-h-screen ">
+            <DotPattern opacity={0.3} className={cn(
+                "[mask-image:linear-gradient(to_bottom,white,white,transparent)] ",
+            )}/>
             <motion.div
-                className="text-center  p-8"
+                className="text-center z-10  p-8"
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 1, ease: 'easeOut' }}
             >
-                <motion.h1
-                    className="text-5xl font-bold mb-4"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ delay: 0.5, duration: 1 }}
-                >
+                <TextAnimate animation="blurInUp" by="word" duration={1} once className="text-5xl font-bold mb-4">
                     Bienvenue sur mon portfolio !
-                </motion.h1>
-                <motion.p
-                    className="text-xl mb-6"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ delay: 0.7, duration: 1 }}
-                >
+                </TextAnimate>
+                <TextAnimate animation="blurInUp" by="word" delay={1} once className="text-xl mb-6">
                     Découvrez mes projets et compétences.
-                </motion.p>
-                <Button variant="outline" size="lg" >
+                </TextAnimate>
+                <StackCloud />
+                <ShinyButton className={"border border-foreground"} >
                     Voir mes projets
-                </Button>
+                </ShinyButton>
             </motion.div>
         </div>
     );

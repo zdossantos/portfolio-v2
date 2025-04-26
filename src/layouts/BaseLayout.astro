@@ -1,9 +1,8 @@
 ---
-import Header from '../components/Header';
 import Footer from '../components/Footer';
 import '../styles/global.css';
 import { ThemeProvider } from '../components/ThemeProvider';
-
+import { Dock } from '../components/Dock';
 ---
 
 <html lang="fr">
@@ -13,12 +12,12 @@ import { ThemeProvider } from '../components/ThemeProvider';
     <title>Mon Portfolio</title>
 </head>
 <body class="flex flex-col min-h-screen bg-background text-foreground">
-<Header />
 <main class="flex-1">
     <ThemeProvider client:load>
         <slot />
     </ThemeProvider>
 </main>
+<Dock client:load />
 <Footer />
 </body>
 </html>

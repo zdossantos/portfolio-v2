@@ -1,6 +1,9 @@
+import {MagicCard} from "@/components/magicui/magic-card.tsx";
+
 export default function ContactForm() {
     return (
-        <section id="contact" className="py-20 max-w-xl mx-auto">
+        <MagicCard className={"size-fit max-w-xl mx-auto p-10 w-1/2 rounded-xl"}>
+        <section id="contact">
             <h2 className="text-3xl font-bold text-center mb-8">Contacte-moi</h2>
             <form className="flex flex-col gap-4">
                 <input type="text" placeholder="Ton nom" className="p-3 rounded-md bg-muted" />
@@ -11,5 +14,6 @@ export default function ContactForm() {
                 </button>
             </form>
         </section>
+        </MagicCard>
     );
 }
