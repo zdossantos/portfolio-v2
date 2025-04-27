@@ -3,7 +3,7 @@ import { motion } from 'motion/react';
 export default function Footer() {
     return (
         <motion.footer
-            className="py-6 bg-gray-800 text-white text-center"
+            className="pb-24 text-center"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1, duration: 1 }}
