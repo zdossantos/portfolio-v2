@@ -10,6 +10,11 @@ import {
   useTransform,
 } from "motion/react";
 import React, { type PropsWithChildren, useRef} from "react";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 
 import { cn } from "@/lib/utils";
 
@@ -92,6 +97,7 @@ export interface DockIconProps
   props?: PropsWithChildren;
   href?: React.AnchorHTMLAttributes<HTMLAnchorElement>["href"];
   target?: React.AnchorHTMLAttributes<HTMLAnchorElement>["target"];
+  tooltip?: string;
 }
 
 const DockIcon = ({
@@ -101,6 +107,7 @@ const DockIcon = ({
   mouseX,
   className,
   children,
+  tooltip,
   ...props
 }: DockIconProps) => {
   const ref = useRef<HTMLDivElement>(null);
@@ -124,27 +131,40 @@ const DockIcon = ({
     damping: 12,
   });
 
-  const content = <motion.div
+  const content = (
+    <motion.div
       ref={ref}
       style={{ width: scaleSize, height: scaleSize, padding }}
       className={cn(
-          "flex aspect-square cursor-pointer items-center justify-center rounded-full",
-          className,
+        "flex aspect-square cursor-pointer items-center justify-center rounded-full",
+        className,
       )}
       {...props}
-  >
-    {children}
-  </motion.div>;
+    >
+      {children}
+    </motion.div>
+  );
 
-  if(props.href){
+  const wrappedContent = tooltip ? (
+    <Tooltip>
+      <TooltipTrigger asChild>
+        {content}
+      </TooltipTrigger>
+      <TooltipContent>
+        <p>{tooltip}</p>
+      </TooltipContent>
+    </Tooltip>
+  ) : content;
+
+  if (props.href) {
     return (
       <a href={props.href} target={props.target}>
-        {content}
+        {wrappedContent}
       </a>
     );
   }
 
-  return content;
+  return wrappedContent;
 };
 
 DockIcon.displayName = "DockIcon";

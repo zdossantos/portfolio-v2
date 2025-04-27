@@ -2,7 +2,8 @@
 import Footer from '../components/Footer';
 import '../styles/global.css';
 import { ThemeProvider } from '../components/ThemeProvider';
-import { Dock } from '../components/Dock';
+import { Dock } from '../components/features/dock/Dock';
+import { TooltipProvider } from '../components/ui/tooltip';
 ---
 
 <html lang="fr">
@@ -14,10 +15,12 @@ import { Dock } from '../components/Dock';
 <body class="flex flex-col min-h-screen bg-background text-foreground">
 <main class="flex-1">
     <ThemeProvider client:load>
-        <slot />
+        <TooltipProvider>
+            <slot />
+        </TooltipProvider>
     </ThemeProvider>
 </main>
 <Dock client:load />
-<Footer />
+<Footer client:load />
 </body>
 </html>
