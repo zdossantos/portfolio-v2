@@ -3,18 +3,23 @@ import { defineConfig } from 'astro/config';
 import tailwindcss from '@tailwindcss/vite';
 import path from 'path';
 import react from '@astrojs/react';
-import './src/styles/global.css';
 import sitemap from 'astro-sitemap';
 
 // https://astro.build/config
 export default defineConfig({
   vite: {
-      plugins: [tailwindcss()],
-      resolve: {
-          alias: {
-              '@': path.resolve('./src'),
-          },
+    plugins: [tailwindcss()],
+    resolve: {
+      alias: {
+        '@': path.resolve('./src'),
       },
-	},
-  integrations: [react(),sitemap()]
+    },
+  },
+  
+  integrations: [
+    react(), 
+    sitemap()
+  ],
+
+  site: 'https://www.zdossantos.fr',
 });
