@@ -15,7 +15,7 @@ export default function HeroSection() {
                 <motion.div
                     className="flex flex-col items-center gap-8 z-10"
                     initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
+                    animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 1, ease: 'easeOut' }}
                 >
                     {/* Photo */}
@@ -34,15 +34,15 @@ export default function HeroSection() {
 
                     {/* Text content */}
                     <div className="text-center max-w-2xl">
-                        <TextAnimate 
-                            animation="blurInUp" 
-                            by="word" 
-                            duration={1} 
-                            once 
-                            className="text-4xl md:text-5xl font-bold mb-4"
+                        <motion.h1
+                            className="text-4xl md:text-5xl flex flex-col  font-bold mb-4"
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 1, ease: 'easeOut' }}
                         >
-                            Développeur Full Stack
-                        </TextAnimate>
+                            Zacharie Dos Santos
+                            <span className="text-2xl">Développeur Full Stack</span>
+                        </motion.h1>
                         <TextAnimate 
                             animation="blurInUp" 
                             by="word" 
