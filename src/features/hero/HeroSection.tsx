@@ -15,7 +15,7 @@ export default function HeroSection() {
                 <motion.div
                     className="flex flex-col items-center gap-8 z-10"
                     initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
+                    whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 1, ease: 'easeOut' }}
                 >
                     {/* Photo */}

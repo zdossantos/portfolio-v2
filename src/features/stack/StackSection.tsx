@@ -26,15 +26,19 @@ const SkillBar = ({ skill }: { skill: typeof skills[0] }) => {
     );
 };
 
-const CategoryCard = ({ category }: { category: typeof categories[keyof typeof categories] }) => {
+const CategoryCard = ({ category, index }: { category: typeof categories[keyof typeof categories], index: number }) => {
     const { name, icon: Icon, skills } = category;
     const hasManySkills = skills.length > 4;
     
     return (
-        <div className={cn(
-            "flex flex-col overflow-hidden rounded-xl bg-background shadow-sm dark:bg-background/10 backdrop-blur-xs dark:border dark:border-neutral-800",
-            hasManySkills && "sm:col-span-2"
-        )}>
+        <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: index * 0.1 }}
+            className={cn(
+                "flex flex-col overflow-hidden rounded-xl bg-background shadow-sm dark:bg-background/10 backdrop-blur-xs dark:border dark:border-neutral-800",
+                hasManySkills && "sm:col-span-2"
+            )}>
             <div className="flex-none p-4">
                 <div className="flex items-center gap-3">
                     <Icon className="h-8 w-8 text-neutral-700 dark:text-neutral-300" />
@@ -58,7 +62,7 @@ const CategoryCard = ({ category }: { category: typeof categories[keyof typeof c
                     </div>
                 </div>
             </div>
-        </div>
+        </motion.div>
     );
 };
 
@@ -89,8 +93,8 @@ export default function StackSection() {
                     {/* Grille à droite */}
                     <div className="w-full md:w-2/3 h-full">
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 h-full">
-                            {Object.values(categories).map((category) => (
-                                <CategoryCard key={category.name} category={category} />
+                            {Object.values(categories).map((category,index) => (
+                                <CategoryCard index={index} key={category.name} category={category} />
                             ))}
                         </div>
                     </div>

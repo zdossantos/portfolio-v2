@@ -68,7 +68,7 @@ export default function ProjectCard({ title, description, image, githubUrl, site
                         </TooltipTrigger>
                         {!siteUrl && (
                             <TooltipContent>
-                                <p>Projet en cours de développement</p>
+                                <p>Projet non disponible</p>
                             </TooltipContent>
                         )}
                     </Tooltip>
