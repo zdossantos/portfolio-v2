@@ -26,9 +26,10 @@ export default function HeroSection() {
                         transition={{ delay: 0.2, duration: 0.8 }}
                     >
                         <img
-                            src="/images/profile.png"
+                            src="/images/profile.webp"
                             alt="Photo de profil"
                             className="w-full h-full object-cover"
+                            loading="lazy"
                         />
                     </motion.div>
 
