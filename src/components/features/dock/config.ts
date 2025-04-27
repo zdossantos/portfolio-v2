@@ -1,5 +1,5 @@
 import { Icons } from "@/components/icons/social-icons";
-import { Code, Home, Layers } from "lucide-react";
+import { Code, Home, Layers, Mail } from "lucide-react";
 
 export interface DockItemConfig {
     icon?: React.ComponentType<any>;
@@ -20,6 +20,12 @@ export const dockItems: DockItemConfig[] = [
         icon: Icons.linkedin,
         tooltip: "LinkedIn",
         href: "https://www.linkedin.com/in/zacharie-dos-santos-6106441aa/",
+        target: "_blank"
+    },
+    {
+        icon: Mail,
+        tooltip: "Contactez-moi",
+        href: "mailto:zacharie21000@gmail.com",
         target: "_blank"
     },
     {
