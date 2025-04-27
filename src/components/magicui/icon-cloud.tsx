@@ -218,7 +218,6 @@ export function IconCloud({ icons, images }: IconCloudProps) {
 
     const animate = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-
       const centerX = canvas.width / 2;
       const centerY = canvas.height / 2;
       const maxDistance = Math.sqrt(centerX * centerX + centerY * centerY);

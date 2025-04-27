@@ -17,7 +17,7 @@ export interface SkillItem {
 
 export const skills: SkillItem[] = [
     // Frontend (from most complex to simplest)
-    { id: 'nextjs', name: 'Next.js', icon: SiNextdotjs, level: 90, color: '#ffffff', category: 'frontend' },
+    { id: 'nextjs', name: 'Next.js', icon: SiNextdotjs, level: 90, color: "var(--color-light)", category: 'frontend' },
     { id: 'react', name: 'React', icon: SiReact, level: 95, color: '#61DAFB', category: 'frontend' },
     { id: 'vue', name: 'Vue.js', icon: SiVuedotjs, level: 50, color: '#4FC08D', category: 'frontend' },
     { id: 'typescript', name: 'TypeScript', icon: SiTypescript, level: 90, color: '#3178C6', category: 'frontend' },
@@ -28,20 +28,20 @@ export const skills: SkillItem[] = [
 
     // Backend (from most complex to simplest)
     { id: 'laravel', name: 'Laravel', icon: SiLaravel, level: 90, color: '#FF2D20', category: 'backend' },
-    { id: 'express', name: 'Express.js', icon: SiExpress, level: 40, color: '#ffffff', category: 'backend' },
+    { id: 'express', name: 'Express.js', icon: SiExpress, level: 40, color: "var(--color-light)", category: 'backend' },
 
     // Databases (from most complex to simplest)
     { id: 'mariadb', name: 'MariaDB', icon: SiMariadb, level: 90, color: '#003545', category: 'database' },
     { id: 'mysql', name: 'MySQL', icon: SiMysql, level: 90, color: '#4479A1', category: 'database' },
 
     // DevOps & Hosting (from most complex to simplest)
-    { id: 'vercel', name: 'Vercel', icon: SiVercel, level: 60, color: '#ffffff', category: 'devops' },
+    { id: 'vercel', name: 'Vercel', icon: SiVercel, level: 60, color: "var(--color-light)", category: 'devops' },
     { id: 'netlify', name: 'Netlify', icon: SiNetlify, level: 50, color: '#00C7B7', category: 'devops' },
 
     // Development Tools & OS (from most complex to simplest)
-    { id: 'phpstorm', name: 'PhpStorm', icon: SiPhpstorm, level: 95, color: '#ffffff', category: 'tools' },
+    { id: 'phpstorm', name: 'PhpStorm', icon: SiPhpstorm, level: 95, color: "var(--color-light)", category: 'tools' },
     { id: 'pnpm', name: 'pnpm', icon: SiPnpm, level: 90, color: '#F69220', category: 'tools' },
-    { id: 'macos', name: 'macOS', icon: SiApple, level: 90, color: '#ffffff', category: 'tools' },
+    { id: 'macos', name: 'macOS', icon: SiApple, level: 90, color: "var(--color-light)", category: 'tools' },
     { id: 'ubuntu', name: 'Ubuntu', icon: SiUbuntu, level: 80, color: '#E95420', category: 'tools' }
 ];
 

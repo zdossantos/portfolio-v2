@@ -18,7 +18,9 @@ export const dockItems: DockItemConfig[] = [
     },
     {
         icon: Icons.linkedin,
-        tooltip: "LinkedIn"
+        tooltip: "LinkedIn",
+        href: "https://www.linkedin.com/in/zacharie-dos-santos-6106441aa/",
+        target: "_blank"
     },
     {
         isSeparator: true
@@ -26,16 +28,16 @@ export const dockItems: DockItemConfig[] = [
     {
         icon: Home,
         href: "#",
-        tooltip: "Home"
+        tooltip: "Accueil"
     },
     {
         icon: Layers,
         href: "#stack",
-        tooltip: "Tech Stack"
+        tooltip: "Stack Technique"
     },
     {
         icon: Code,
         href: "#projects",
-        tooltip: "Projects"
+        tooltip: "Projets"
     }
 ]; 

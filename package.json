@@ -19,6 +19,7 @@
     "@types/canvas-confetti": "^1.9.0",
     "@types/react": "^19.1.2",
     "@types/react-dom": "^19.1.2",
+    "@uidotdev/usehooks": "^2.4.1",
     "astro": "^5.7.5",
     "astro-sitemap": "^1.0.0",
     "canvas-confetti": "^1.9.3",
