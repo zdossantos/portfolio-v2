@@ -1,5 +1,4 @@
 ---
-import Footer from '../components/Footer';
 import '../styles/global.css';
 import { ThemeProvider } from '../components/ThemeProvider';
 import { Dock } from '../components/features/dock/Dock';
@@ -18,7 +17,7 @@ import { TooltipProvider } from '../components/ui/tooltip';
     <link rel="icon" type="image/png" href="/images/profile.png" />
 </head>
 <body class="flex flex-col min-h-screen bg-background text-foreground">
-<main class="flex-1">
+<main class="flex-1 pb-16">
     <ThemeProvider client:load>
         <TooltipProvider>
             <slot />
@@ -26,6 +25,5 @@ import { TooltipProvider } from '../components/ui/tooltip';
     </ThemeProvider>
 </main>
 <Dock client:load />
-<Footer client:load />
 </body>
 </html>
