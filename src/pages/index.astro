@@ -1,12 +1,12 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import HeroSection from '../features/hero/HeroSection';
+import HeroSection from '../features/hero/HeroSection.astro';
 import ProjectList from '../features/projects/ProjectList';
 import StackSection from '../features/stack/StackSection';
 ---
 
 <BaseLayout>
-	<HeroSection client:load />
+	<HeroSection />
 	<StackSection client:load />
 	<ProjectList client:load />
 </BaseLayout>
