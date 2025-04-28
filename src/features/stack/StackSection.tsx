@@ -10,18 +10,7 @@ const SkillBar = ({ skill }: { skill: typeof skills[0] }) => {
     return (
         <div className="flex items-center gap-3">
             <Icon className="h-5 w-5" style={{ color: color || 'currentColor' }} />
-            <div className="flex-1">
-                <div className="flex justify-between items-center mb-0.5">
-                    <span className="text-sm font-medium text-neutral-900 dark:text-neutral-100">{name}</span>
-                    <span className="text-xs text-neutral-500 dark:text-neutral-400">{level}%</span>
-                </div>
-                <div className="h-1.5 bg-neutral-200 dark:bg-neutral-800 rounded-full overflow-hidden">
-                    <div
-                        className="h-full rounded-full bg-neutral-900 dark:bg-white transition-all duration-500"
-                        style={{ width: `${level}%` }}
-                    />
-                </div>
-            </div>
+            <span className="font-medium text-neutral-900 dark:text-neutral-100">{name}</span>
         </div>
     );
 };
