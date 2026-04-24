@@ -3,19 +3,95 @@ import '../styles/global.css';
 import { ThemeProvider } from '../components/ThemeProvider';
 import { Dock } from '../components/features/dock/Dock';
 import { TooltipProvider } from '../components/ui/tooltip';
+import GoogleAnalytics from '../components/GoogleAnalytics.astro';
+
+interface Props {
+  title?: string;
+  description?: string;
+  canonical?: string;
+  ogImage?: string;
+}
+
+const {
+  title = "Zacharie Dos Santos – Développeur Web Fullstack à Dijon",
+  description = "Portfolio de Zacharie Dos Santos, développeur web fullstack basé à Dijon (Bourgogne). Spécialisé en Laravel, Vue.js, TypeScript et Astro. Disponible pour des missions freelance ou CDI.",
+  canonical = "https://zdossantos.fr/",
+  ogImage = "https://zdossantos.fr/images/og-image.webp",
+} = Astro.props;
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Zacharie Dos Santos",
+  "url": "https://zdossantos.fr",
+  "image": "https://zdossantos.fr/images/profile.webp",
+  "sameAs": [
+    "https://github.com/zdossantos",
+    "https://twitter.com/ZacharieDS"
+  ],
+  "jobTitle": "Développeur Web Fullstack",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Freelance / Disponible"
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Dijon",
+    "addressRegion": "Bourgogne-Franche-Comté",
+    "addressCountry": "FR"
+  },
+  "knowsAbout": ["Laravel", "Vue.js", "TypeScript", "Astro", "PHP", "JavaScript", "Développement web", "Fullstack"],
+  "description": "Développeur web fullstack basé à Dijon, spécialisé en Laravel et Vue.js."
+};
 ---
 
 <html lang="fr">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="keywords" content="zacharie, dos santos,dossantos, portfolio, dev, fullstack, developpeur, dijon, france, developpeur, web, nextjs" />
-    <meta name="robots" content="index, follow">
+
+    <!-- Google Analytics 4 -->
+    <GoogleAnalytics />
+
+    <!-- SEO Primary -->
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="keywords" content="développeur web Dijon, développeur fullstack Dijon, développeur Laravel Dijon, développeur Vue.js Dijon, Zacharie Dos Santos, portfolio développeur, développeur web Bourgogne, freelance développeur web Dijon, web developer Dijon" />
+    <meta name="author" content="Zacharie Dos Santos" />
+    <meta name="robots" content="index, follow" />
+    <meta name="language" content="French" />
+    <meta name="geo.region" content="FR-BFC" />
+    <meta name="geo.placename" content="Dijon" />
+    <link rel="canonical" href={canonical} />
+
+    <!-- Google Search Console -->
     <meta name="google-site-verification" content="AKgIx9bxdB_uJ7h2DyJmHSRsBguhPl3Kh4SE84DXEu8" />
-    <meta name="description" content="Portfolio de Zacharie Dos Santos, développeur web fullstack basé à dijon" />
-    <link rel="canonical" href="https://zdossantos.fr/" />
-    <title>Portfolio - Zacharie Dos Santos</title>
+
+    <!-- Open Graph (Facebook, LinkedIn) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="fr_FR" />
+    <meta property="og:site_name" content="Zacharie Dos Santos – Portfolio" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@ZacharieDS" />
+    <meta name="twitter:creator" content="@ZacharieDS" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+
+    <!-- Favicon -->
     <link rel="icon" type="image/png" href="/images/profile.webp" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
 </head>
 <body class="flex flex-col min-h-screen bg-background text-foreground">
 <main class="flex-1 pb-16">

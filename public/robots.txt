@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
+Disallow: /api/
 
+# Sitemaps
+Sitemap: https://zdossantos.fr/sitemap-index.xml
 Sitemap: https://www.zdossantos.fr/sitemap-index.xml
