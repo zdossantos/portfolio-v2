@@ -3,6 +3,7 @@ import '../styles/global.css';
 import { ThemeProvider } from '../components/ThemeProvider';
 import { Dock } from '../components/features/dock/Dock';
 import { TooltipProvider } from '../components/ui/tooltip';
+import GoogleAnalytics from '../components/GoogleAnalytics.astro';
 
 interface Props {
   title?: string;
@@ -48,6 +49,9 @@ const jsonLd = {
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Google Analytics 4 -->
+    <GoogleAnalytics />
 
     <!-- SEO Primary -->
     <title>{title}</title>
