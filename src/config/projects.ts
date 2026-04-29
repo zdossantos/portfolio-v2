@@ -22,14 +22,14 @@ export const projects = [
     },
     {
         title: "Entreprises",
-        description: "Un projet Laravel / Vue.js permettant aux utilisateurs d'ajouter et d'accéder aux données de leurs entreprises françaises via l'API SIRET.",
+        description: "Un projet Laravel / Vue.js permettant aux utilisateurs d'ajouter et d'accéder aux données de leurs entreprises françaises via l'API SIRET",
         githubUrl: "https://github.com/zdossantos/Entreprises",
         siteUrl: null,
         image: "/images/projects/entreprises.png"
     },
     {
         title: "Mahasiah",
-        description: "Une boutique en ligne en Symfony, avec un backend pour gérer les données et stripe pour les paiements.",
+        description: "Une boutique en ligne en Symfony, avec un backend pour gérer les données et stripe pour les paiements",
         githubUrl: "https://github.com/zdossantos/mahasiah",
         siteUrl: null,
         image: "/images/projects/mahasiah.png"
@@ -43,9 +43,9 @@ export const projects = [
     },
     {
         title: "Life Game",
-        description: "Un projet laravel vuejs permettant de jouer à un jeu de la vie",
+        description: "Un projet Laravel / Vue.js permettant de jouer au jeu de la vie de Conway et de sauvegarder ses parties",
         githubUrl: "https://github.com/zdossantos/life-game",
-        siteUrl: null,
+        siteUrl: 'https://life-game.zdossantos.fr',
         image: "/images/projects/life-game.png"
     }
 ];
