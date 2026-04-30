@@ -3,10 +3,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import HeroSection from '../features/hero/HeroSection.astro';
 import ProjectList from '../features/projects/ProjectList';
 import StackSection from '../features/stack/StackSection';
+import FreelanceSection from '../features/freelance/FreelanceSection';
 ---
 
 <BaseLayout>
 	<HeroSection />
 	<StackSection client:load />
 	<ProjectList client:load />
+	<FreelanceSection client:load />
 </BaseLayout>
