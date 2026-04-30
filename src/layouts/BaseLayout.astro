@@ -13,8 +13,8 @@ interface Props {
 }
 
 const {
-  title = "Zacharie Dos Santos – Développeur Web Fullstack à Dijon",
-  description = "Portfolio de Zacharie Dos Santos, développeur web fullstack basé à Dijon (Bourgogne). Spécialisé en Laravel, Vue.js, TypeScript et Astro. Disponible pour des missions freelance ou CDI.",
+  title = "Zacharie Dos Santos – Développeur Freelance Fullstack à Dijon | Vue.js, React, Next.js, Laravel",
+  description = "Zacharie Dos Santos, développeur web freelance fullstack basé à Dijon. Disponible pour des missions freelance en Vue.js, React, Next.js, Laravel, TypeScript. Profil Malt disponible. Missions en remote ou sur site.",
   canonical = "https://zdossantos.fr/",
   ogImage = "https://zdossantos.fr/images/og-image.webp",
 } = Astro.props;
@@ -27,9 +27,11 @@ const jsonLd = {
   "image": "https://zdossantos.fr/images/profile.webp",
   "sameAs": [
     "https://github.com/zdossantos",
-    "https://twitter.com/ZacharieDS"
+    "https://twitter.com/ZacharieDS",
+    "https://www.malt.com/profile/zachariedossantos",
+    "https://www.linkedin.com/in/zacharie-dos-santos-6106441aa/"
   ],
-  "jobTitle": "Développeur Web Fullstack",
+  "jobTitle": "Développeur Web Fullstack Freelance",
   "worksFor": {
     "@type": "Organization",
     "name": "Freelance / Disponible"
@@ -40,8 +42,8 @@ const jsonLd = {
     "addressRegion": "Bourgogne-Franche-Comté",
     "addressCountry": "FR"
   },
-  "knowsAbout": ["Laravel", "Vue.js", "TypeScript", "Astro", "PHP", "JavaScript", "Développement web", "Fullstack"],
-  "description": "Développeur web fullstack basé à Dijon, spécialisé en Laravel et Vue.js."
+  "knowsAbout": ["Laravel", "Vue.js", "React", "ReactJS", "Next.js", "TypeScript", "Astro", "PHP", "JavaScript", "Développement web", "Fullstack", "Freelance"],
+  "description": "Développeur web freelance fullstack basé à Dijon, spécialisé en Vue.js, React, Next.js et Laravel. Disponible pour des missions freelance."
 };
 ---
 
@@ -56,7 +58,7 @@ const jsonLd = {
     <!-- SEO Primary -->
     <title>{title}</title>
     <meta name="description" content={description} />
-    <meta name="keywords" content="développeur web Dijon, développeur fullstack Dijon, développeur Laravel Dijon, développeur Vue.js Dijon, Zacharie Dos Santos, portfolio développeur, développeur web Bourgogne, freelance développeur web Dijon, web developer Dijon" />
+    <meta name="keywords" content="développeur web Dijon, développeur freelance Dijon, développeur fullstack Dijon, freelance développeur web, mission freelance, Malt, développeur Malt, développeur Laravel Dijon, développeur Vue.js Dijon, développeur React Dijon, développeur Next.js, ReactJS, NextJS, Zacharie Dos Santos, portfolio développeur, développeur web Bourgogne, freelance développeur web Dijon, web developer Dijon, disponible en freelance, vuejs, react, laravel, typescript" />
     <meta name="author" content="Zacharie Dos Santos" />
     <meta name="robots" content="index, follow" />
     <meta name="language" content="French" />
