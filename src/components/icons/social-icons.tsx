@@ -1,5 +1,6 @@
 import React from "react";
 import {LinkedinIcon} from "@/components/svg/LinkedinIcon.tsx";
+import {MaltIcon} from "@/components/svg/MaltIcon.tsx";
 
 export type IconProps = React.HTMLAttributes<SVGElement>;
 
@@ -13,4 +14,5 @@ export const Icons = {
         </svg>
     ),
     linkedin: (props: IconProps) => LinkedinIcon(props),
+    malt: (props: IconProps) => <MaltIcon {...props} />,
 }; 
