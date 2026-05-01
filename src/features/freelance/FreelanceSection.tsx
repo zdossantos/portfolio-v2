@@ -12,23 +12,23 @@ import {links} from "@/config/links.ts";
 const highlights = [
     {
         icon: Zap,
-        title: "Disponible",
-        description: "Disponible pour des missions freelance dès maintenant.",
+        title: "Disponible maintenant",
+        description: "Disponible pour des missions freelance dès maintenant. Démarrage rapide possible sous 48h.",
     },
     {
         icon: MapPin,
-        title: "Dijon & Remote",
-        description: "Basé à Dijon (Bourgogne), j'interviens principalement en remote.",
+        title: "Dijon & Full Remote",
+        description: "Basé à Dijon (21000, Bourgogne-Franche-Comté), j'interviens en full remote ou sur site en France.",
     },
     {
         icon: Briefcase,
-        title: "Missions",
-        description: "Développement web fullstack : Vue.js, React, Next.js, Laravel, TypeScript, Wordpress, Shopify.",
+        title: "Expertise Fullstack",
+        description: "Développement web fullstack : Vue.js, React, Next.js, Laravel, TypeScript, Node.js, Symfony, WordPress, Shopify.",
     },
     {
         icon: Calendar,
-        title: "Flexibilité",
-        description: "Principalement disponible pour des missions courtes, mais ouvert à tout type de projet.",
+        title: "Missions courtes & longues",
+        description: "Régie, forfait ou TMA : je m'adapte à vos besoins, de la mission courte au projet long terme.",
     },
 ];
 
@@ -76,8 +76,8 @@ export default function FreelanceSection() {
                         once
                         className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto"
                     >
-                        Développeur freelance fullstack basé à Dijon, spécialisé en Vue.js,
-                        React, Next.js et Laravel. Prêt pour vos missions.
+                        Développeur freelance fullstack basé à Dijon, expert Vue.js, React, Next.js et Laravel.
+                        Missions en remote ou sur site — régie, forfait ou TMA. Contactez-moi pour démarrer votre projet.
                     </TextAnimate>
                 </div>
 

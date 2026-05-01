@@ -10,21 +10,23 @@ interface Props {
   description?: string;
   canonical?: string;
   ogImage?: string;
+  ogImageAlt?: string;
 }
 
 const {
   title = "Zacharie Dos Santos – Développeur Freelance Fullstack à Dijon | Vue.js, React, Next.js, Laravel",
-  description = "Zacharie Dos Santos, développeur web freelance fullstack basé à Dijon. Disponible pour des missions freelance en Vue.js, React, Next.js, Laravel, TypeScript. Profil Malt disponible. Missions en remote ou sur site.",
-  canonical = "https://zdossantos.fr/",
-  ogImage = "https://zdossantos.fr/images/og-image.webp",
+  description = "Zacharie Dos Santos, développeur web freelance fullstack basé à Dijon. Expert Vue.js, React, Next.js, Laravel et TypeScript. +5 ans d'expérience. Disponible pour vos missions freelance en remote ou sur site. Profil Malt vérifié.",
+  canonical = "https://www.zdossantos.fr/",
+  ogImage = "https://www.zdossantos.fr/images/og-image.webp",
+  ogImageAlt = "Zacharie Dos Santos – Développeur Freelance Fullstack à Dijon",
 } = Astro.props;
 
-const jsonLd = {
+const jsonLdPerson = {
   "@context": "https://schema.org",
   "@type": "Person",
   "name": "Zacharie Dos Santos",
-  "url": "https://zdossantos.fr",
-  "image": "https://zdossantos.fr/images/profile.webp",
+  "url": "https://www.zdossantos.fr",
+  "image": "https://www.zdossantos.fr/images/profile.webp",
   "sameAs": [
     "https://github.com/zdossantos",
     "https://twitter.com/ZacharieDS",
@@ -34,7 +36,7 @@ const jsonLd = {
   "jobTitle": "Développeur Web Fullstack Freelance",
   "worksFor": {
     "@type": "Organization",
-    "name": "Freelance / Disponible"
+    "name": "Indépendant / Freelance"
   },
   "address": {
     "@type": "PostalAddress",
@@ -42,8 +44,65 @@ const jsonLd = {
     "addressRegion": "Bourgogne-Franche-Comté",
     "addressCountry": "FR"
   },
-  "knowsAbout": ["Laravel", "Vue.js", "React", "ReactJS", "Next.js", "TypeScript", "Astro", "PHP", "JavaScript", "Développement web", "Fullstack", "Freelance"],
-  "description": "Développeur web freelance fullstack basé à Dijon, spécialisé en Vue.js, React, Next.js et Laravel. Disponible pour des missions freelance."
+  "knowsAbout": [
+    "Laravel", "Vue.js", "React", "ReactJS", "Next.js", "TypeScript", "Astro",
+    "PHP", "JavaScript", "Node.js", "Symfony", "WordPress", "Shopify",
+    "Développement web", "Fullstack", "Freelance", "API REST", "Tailwind CSS"
+  ],
+  "description": "Développeur web freelance fullstack basé à Dijon, spécialisé en Vue.js, React, Next.js et Laravel. +5 ans d'expérience. Disponible pour vos missions en remote ou sur site.",
+  "email": "zacharie21000@gmail.com",
+  "nationality": "French"
+};
+
+const jsonLdWebsite = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Zacharie Dos Santos – Portfolio Développeur Freelance",
+  "url": "https://www.zdossantos.fr",
+  "description": "Portfolio de Zacharie Dos Santos, développeur web freelance fullstack à Dijon. Vue.js, React, Next.js, Laravel, TypeScript.",
+  "inLanguage": "fr-FR",
+  "author": {
+    "@type": "Person",
+    "name": "Zacharie Dos Santos"
+  }
+};
+
+const jsonLdProfessionalService = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Zacharie Dos Santos – Développeur Freelance",
+  "url": "https://www.zdossantos.fr",
+  "image": "https://www.zdossantos.fr/images/profile.webp",
+  "description": "Service de développement web freelance fullstack à Dijon. Création d'applications web sur mesure avec Vue.js, React, Next.js, Laravel, TypeScript. Remote ou sur site.",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Dijon",
+    "addressRegion": "Bourgogne-Franche-Comté",
+    "postalCode": "21000",
+    "addressCountry": "FR"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "47.3220",
+    "longitude": "5.0415"
+  },
+  "areaServed": ["France", "Remote", "Europe"],
+  "serviceType": ["Développement web", "Développement fullstack", "Applications web sur mesure", "Freelance"],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Services de développement web",
+    "itemListElement": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Développement Vue.js" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Développement React / Next.js" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Développement Laravel / PHP" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Développement TypeScript fullstack" } }
+    ]
+  },
+  "sameAs": [
+    "https://github.com/zdossantos",
+    "https://www.malt.com/profile/zachariedossantos",
+    "https://www.linkedin.com/in/zacharie-dos-santos-6106441aa/"
+  ]
 };
 ---
 
@@ -51,6 +110,12 @@ const jsonLd = {
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#ff6b35" />
+
+    <!-- Preconnect pour la performance -->
+    <link rel="preconnect" href="https://www.googletagmanager.com" />
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+    <link rel="preload" as="image" href="/images/profile.webp" fetchpriority="high" />
 
     <!-- Google Analytics 4 -->
     <GoogleAnalytics />
@@ -58,13 +123,18 @@ const jsonLd = {
     <!-- SEO Primary -->
     <title>{title}</title>
     <meta name="description" content={description} />
-    <meta name="keywords" content="développeur web Dijon, développeur freelance Dijon, développeur fullstack Dijon, freelance développeur web, mission freelance, Malt, développeur Malt, développeur Laravel Dijon, développeur Vue.js Dijon, développeur React Dijon, développeur Next.js, ReactJS, NextJS, Zacharie Dos Santos, portfolio développeur, développeur web Bourgogne, freelance développeur web Dijon, web developer Dijon, disponible en freelance, vuejs, react, laravel, typescript" />
+    <meta name="keywords" content="développeur web Dijon, développeur freelance Dijon, développeur fullstack Dijon, freelance développeur web, mission freelance, Malt, développeur Malt, développeur Laravel Dijon, développeur Vue.js Dijon, développeur React Dijon, développeur Next.js Dijon, ReactJS, NextJS, TypeScript, Zacharie Dos Santos, portfolio développeur, développeur web Bourgogne, freelance développeur web Dijon, web developer Dijon France, disponible en freelance, vuejs, react, laravel, typescript, symfony, wordpress, shopify, node.js, développement web sur mesure, application web" />
     <meta name="author" content="Zacharie Dos Santos" />
-    <meta name="robots" content="index, follow" />
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
     <meta name="language" content="French" />
+    <meta name="rating" content="general" />
+    <meta name="revisit-after" content="7 days" />
     <meta name="geo.region" content="FR-BFC" />
-    <meta name="geo.placename" content="Dijon" />
+    <meta name="geo.placename" content="Dijon, Bourgogne-Franche-Comté" />
+    <meta name="geo.position" content="47.3220;5.0415" />
+    <meta name="ICBM" content="47.3220, 5.0415" />
     <link rel="canonical" href={canonical} />
+    <link rel="alternate" href={canonical} hreflang="fr" />
 
     <!-- Google Search Console -->
     <meta name="google-site-verification" content="AKgIx9bxdB_uJ7h2DyJmHSRsBguhPl3Kh4SE84DXEu8" />
@@ -77,8 +147,9 @@ const jsonLd = {
     <meta property="og:image" content={ogImage} />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={ogImageAlt} />
     <meta property="og:locale" content="fr_FR" />
-    <meta property="og:site_name" content="Zacharie Dos Santos – Portfolio" />
+    <meta property="og:site_name" content="Zacharie Dos Santos – Portfolio Développeur Freelance" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
@@ -87,13 +158,17 @@ const jsonLd = {
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImage} />
+    <meta name="twitter:image:alt" content={ogImageAlt} />
 
-    <!-- Favicon -->
+    <!-- Favicon & PWA -->
     <link rel="icon" type="image/png" href="/images/profile.webp" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/images/profile.webp" />
 
     <!-- JSON-LD Structured Data -->
-    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLdPerson)} />
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLdWebsite)} />
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLdProfessionalService)} />
 </head>
 <body class="flex flex-col min-h-screen bg-background text-foreground">
 <main class="flex-1 pb-16">

@@ -32,7 +32,7 @@ export default function ProjectCard({ title, description, image, githubUrl, site
             <div className="relative h-32 w-full mb-3 overflow-hidden rounded-lg">
                 <img 
                     src={image} 
-                    alt={title}
+                    alt={`Aperçu du projet ${title} – ${description.slice(0, 60)}`}
                     className="object-cover w-full h-full"
                     loading="lazy"
                     decoding="async"
