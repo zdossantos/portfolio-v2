@@ -1,6 +1,6 @@
 import { 
     SiTypescript, SiReact, SiNextdotjs, SiJavascript, 
-    SiHtml5, SiCss3, SiSass, SiVuedotjs, 
+    SiHtml5, SiCss, SiSass, SiVuedotjs, 
     SiExpress, SiLaravel, SiMariadb, SiMysql,
     SiVercel, SiNetlify, SiPhpstorm, SiPnpm,
     SiApple, SiUbuntu
@@ -23,7 +23,7 @@ export const skills: SkillItem[] = [
     { id: 'typescript', name: 'TypeScript', icon: SiTypescript, level: 90, color: '#3178C6', category: 'frontend' },
     { id: 'javascript', name: 'JavaScript', icon: SiJavascript, level: 95, color: '#F7DF1E', category: 'frontend' },
     { id: 'sass', name: 'SASS', icon: SiSass, level: 70, color: '#CC6699', category: 'frontend' },
-    { id: 'css3', name: 'CSS3', icon: SiCss3, level: 85, color: '#1572B6', category: 'frontend' },
+    { id: 'css3', name: 'CSS3', icon: SiCss, level: 85, color: '#1572B6', category: 'frontend' },
     { id: 'html5', name: 'HTML5', icon: SiHtml5, level: 90, color: '#E34F26', category: 'frontend' },
 
     // Backend (from most complex to simplest)
