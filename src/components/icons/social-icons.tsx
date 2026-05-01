@@ -14,5 +14,7 @@ export const Icons = {
         </svg>
     ),
     linkedin: (props: IconProps) => LinkedinIcon(props),
-    malt: (props: IconProps) => <MaltIcon {...props} className="fill-malt" />,
-}; 
+    malt: ({className, ...props}: IconProps) => (
+        <MaltIcon {...props} className={className ? `fill-malt ${className}` : "fill-malt"}/>
+    ),
+};

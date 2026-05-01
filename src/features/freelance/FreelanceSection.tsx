@@ -50,24 +50,24 @@ export default function FreelanceSection() {
                 {/* Header */}
                 <div className="text-center mb-12">
                     <div className={"flex flex-col gap-1"}>
-                    <TextAnimate
-                        animation="blurInUp"
-                        by="word"
-                        duration={1}
-                        once
-                        className="text-3xl sm:text-4xl font-bold mb-4 leading-0"
-                    >
-                        Disponible en
-                    </TextAnimate>
-                    <TextAnimate
-                        animation="blurInUp"
-                        by="word"
-                        duration={1}
-                        once
-                        className="text-3xl sm:text-4xl font-bold mb-4 text-malt"
-                    >
-                        Freelance
-                    </TextAnimate>
+                        <TextAnimate
+                            animation="blurInUp"
+                            by="word"
+                            duration={1}
+                            once
+                            className="text-3xl sm:text-4xl font-bold mb-4 leading-none"
+                        >
+                            Disponible en
+                        </TextAnimate>
+                        <TextAnimate
+                            animation="blurInUp"
+                            by="word"
+                            duration={1}
+                            once
+                            className="text-3xl sm:text-4xl font-bold mb-4 text-malt"
+                        >
+                            Freelance
+                        </TextAnimate>
                     </div>
                     <TextAnimate
                         animation="blurInUp"
@@ -77,7 +77,8 @@ export default function FreelanceSection() {
                         className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto"
                     >
                         Développeur freelance fullstack basé à Dijon, expert Vue.js, React, Next.js et Laravel.
-                        Missions en remote ou sur site — régie, forfait ou TMA. Contactez-moi pour démarrer votre projet.
+                        Missions en remote ou sur site — régie, forfait ou TMA. Contactez-moi pour démarrer votre
+                        projet.
                     </TextAnimate>
                 </div>
 
@@ -116,27 +117,26 @@ export default function FreelanceSection() {
                     transition={{delay: 0.4}}
                     className="flex flex-col sm:flex-row gap-4 justify-center items-center"
                 >
-                    <a
-                        href={links.malt}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="Voir le profil Malt de Zacharie Dos Santos"
-                    >
-                        <Button size="lg" className="bg-malt text-white hover:bg-malt/90">
+                    <Button size="lg" className="bg-malt text-white hover:bg-malt/90" asChild>
+                        <a
+                            href={links.malt}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Voir le profil Malt de Zacharie Dos Santos"
+                        >
                             <MaltIcon className="size-6 fill-white"/>
                             Voir mon profil Malt
-                        </Button>
-                    </a>
-                    <a
-                        href={`mailto:${links.email}`}
-                        aria-label="Contacter Zacharie Dos Santos par email"
-                    >
-                        <Button variant="outline" size="lg">
+                        </a>
+                    </Button>
+                    <Button variant="outline" size="lg" asChild>
+                        <a
+                            href={`mailto:${links.email}`}
+                            aria-label="Contacter Zacharie Dos Santos par email"
+                        >
                             <ExternalLink className="size-6"/>
                             Me contacter
-                        </Button>
-
-                    </a>
+                        </a>
+                    </Button>
                 </motion.div>
             </div>
         </section>

@@ -69,15 +69,20 @@ export default function ProjectCard({ title, description, image, githubUrl, site
                                     <span>Site</span>
                                 </a>
                             ) : (
-                                <button
-                                    disabled
-                                    aria-disabled="true"
+                                <span
+                                    tabIndex={0}
+                                    className="inline-flex"
                                     aria-label={`Site de ${title} non disponible`}
-                                    className="flex items-center gap-1 px-3 py-1.5 rounded-lg transition-colors duration-300 text-sm bg-white/5 cursor-not-allowed"
                                 >
-                                    <ExternalLink size={14} aria-hidden="true" />
-                                    <span>Site</span>
-                                </button>
+                                    <button
+                                        disabled
+                                        aria-disabled="true"
+                                        className="flex items-center gap-1 px-3 py-1.5 rounded-lg transition-colors duration-300 text-sm bg-white/5 cursor-not-allowed"
+                                    >
+                                        <ExternalLink size={14} aria-hidden="true" />
+                                        <span>Site</span>
+                                    </button>
+                                </span>
                             )}
                         </TooltipTrigger>
                         {!siteUrl && (
