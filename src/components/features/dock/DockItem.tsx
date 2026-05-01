@@ -17,12 +17,11 @@ export const DockItem = React.memo<DockItemProps>(({
 }) => {
     return (
         <DockIcon 
-            className="bg-black/10 dark:bg-white/10 hover:bg-black/20 dark:hover:bg-white/20 transition-colors duration-200" 
             href={href}
             target={target}
             tooltip={tooltip}
         >
-            <Icon className="size-full" />
+            <Icon className="size-8" />
         </DockIcon>
     );
 });

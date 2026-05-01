@@ -34,28 +34,5 @@ export const dockItems: DockItemConfig[] = [
         tooltip: "Contactez-moi",
         href: `mailto:${links.email}`,
         target: "_blank"
-    },
-    {
-        isSeparator: true
-    },
-    {
-        icon: Home,
-        href: "#",
-        tooltip: "Accueil"
-    },
-    {
-        icon: Layers,
-        href: "#stack",
-        tooltip: "Stack Technique"
-    },
-    {
-        icon: Code,
-        href: "#projects",
-        tooltip: "Projets"
-    },
-    {
-        icon: Briefcase,
-        href: "#freelance",
-        tooltip: "Freelance"
     }
 ]; 
