@@ -1,6 +1,6 @@
-    import {useTheme} from "@/components/ThemeProvider.tsx";
+import {useTheme} from "@/components/ThemeProvider.tsx";
 import { cn } from '@/lib/utils';
-import { Github, ExternalLink } from 'lucide-react';
+import { ExternalLink } from 'lucide-react';
 import { MagicCard } from '@/components/magicui/magic-card';
 import {
   Tooltip,
@@ -8,6 +8,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+import {GitHubLogoIcon} from "@radix-ui/react-icons";
 
 interface ProjectCardProps {
     title: string;
@@ -51,7 +52,7 @@ export default function ProjectCard({ title, description, image, githubUrl, site
                     aria-label={`Voir le code source de ${title} sur GitHub`}
                     className="flex items-center gap-1 px-3 py-1.5 bg-white/10 hover:bg-white/20 rounded-lg transition-colors duration-300 text-sm"
                 >
-                    <Github size={14} aria-hidden="true" />
+                    <GitHubLogoIcon className={"size-8"} aria-hidden="true" />
                     <span>Code</span>
                 </a>
                 <TooltipProvider>

@@ -4,7 +4,6 @@ import { cva, type VariantProps } from "class-variance-authority";
 import {
   motion,
   type MotionProps,
-  MotionValue,
   useMotionValue,
   useSpring,
   useTransform,
@@ -17,6 +16,7 @@ import {
 } from "@/components/ui/tooltip";
 
 import { cn } from "@/lib/utils";
+import type {MotionValue} from "motion";
 
 export interface DockProps extends VariantProps<typeof dockVariants> {
   className?: string;

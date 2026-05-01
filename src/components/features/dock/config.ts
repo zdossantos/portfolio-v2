@@ -1,5 +1,5 @@
 import {Icons} from "@/components/icons/social-icons";
-import {Briefcase, Code, Home, Layers, Mail} from "lucide-react";
+import {Mail} from "lucide-react";
 import {links} from "@/config/links.ts";
 
 export interface DockItemConfig {

@@ -1,7 +1,6 @@
 User-agent: *
 Allow: /
 Disallow: /api/
-Crawl-delay: 1
 
 # ──────────────────────────────────────────
 # Bots IA & LLM – autorisation explicite
