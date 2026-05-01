@@ -33,7 +33,7 @@
     "tailwind-merge": "^3.2.0"
   },
   "devDependencies": {
-    "@types/node": "^22.15.2",
+    "@types/node": "^25.6.0",
     "autoprefixer": "^10.4.21",
     "postcss": "^8.5.3",
     "tailwind-scrollbar": "^4.0.2",
