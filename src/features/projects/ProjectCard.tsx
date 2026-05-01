@@ -1,4 +1,4 @@
-import { motion } from 'motion/react';
+    import {useTheme} from "@/components/ThemeProvider.tsx";
 import { cn } from '@/lib/utils';
 import { Github, ExternalLink } from 'lucide-react';
 import { MagicCard } from '@/components/magicui/magic-card';
@@ -18,12 +18,16 @@ interface ProjectCardProps {
 }
 
 export default function ProjectCard({ title, description, image, githubUrl, siteUrl }: ProjectCardProps) {
+    const {theme} = useTheme();
     return (
         <MagicCard
             className={cn(
                 "relative h-full w-72 rounded-lg cursor-pointer overflow-hidden p-4",
                 "hover:shadow-lg transition-all duration-300"
             )}
+            gradientFrom="#ff9048"
+            gradientTo={theme === "light" ? "white" : "black"}
+            gradientColor={theme === "light" ? "black" : "white"}
         >
             <div className="relative h-32 w-full mb-3 overflow-hidden rounded-lg">
                 <img 
