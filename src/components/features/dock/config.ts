@@ -1,5 +1,6 @@
-import { Icons } from "@/components/icons/social-icons";
-import { Briefcase, Code, Home, Layers, Mail } from "lucide-react";
+import {Icons} from "@/components/icons/social-icons";
+import {Briefcase, Code, Home, Layers, Mail} from "lucide-react";
+import {links} from "@/config/links.ts";
 
 export interface DockItemConfig {
     icon?: React.ComponentType<any>;
@@ -31,7 +32,7 @@ export const dockItems: DockItemConfig[] = [
     {
         icon: Mail,
         tooltip: "Contactez-moi",
-        href: "mailto:zacharie21000@gmail.com",
+        href: `mailto:${links.email}`,
         target: "_blank"
     },
     {

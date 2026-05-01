@@ -1,10 +1,13 @@
 "use client";
 
-import { motion } from "motion/react";
-import { cn } from "@/lib/utils";
-import { GridPattern } from "@/components/magicui/grid-pattern";
-import { TextAnimate } from "@/components/magicui/text-animate";
-import { Briefcase, Calendar, MapPin, Zap, ExternalLink } from "lucide-react";
+import {motion} from "motion/react";
+import {cn} from "@/lib/utils";
+import {GridPattern} from "@/components/magicui/grid-pattern";
+import {TextAnimate} from "@/components/magicui/text-animate";
+import {Briefcase, Calendar, MapPin, Zap, ExternalLink} from "lucide-react";
+import {MaltIcon} from "@/components/svg/MaltIcon.tsx";
+import {Button} from "@/components/ui/button.tsx";
+import {links} from "@/config/links.ts";
 
 const highlights = [
     {
@@ -74,13 +77,13 @@ export default function FreelanceSection() {
                         return (
                             <motion.div
                                 key={item.title}
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                transition={{ delay: index * 0.1 }}
+                                initial={{opacity: 0, y: 20}}
+                                whileInView={{opacity: 1, y: 0}}
+                                transition={{delay: index * 0.1}}
                                 className="flex items-start gap-4 rounded-xl p-5 bg-background shadow-sm dark:bg-background/10 backdrop-blur-xs dark:border dark:border-neutral-800"
                             >
                                 <div className="flex-shrink-0 rounded-lg p-2 bg-primary/10">
-                                    <Icon className="h-5 w-5 text-primary" />
+                                    <Icon className="h-5 w-5 text-primary"/>
                                 </div>
                                 <div>
                                     <h3 className="font-semibold text-neutral-800 dark:text-neutral-200 mb-1">
@@ -97,40 +100,31 @@ export default function FreelanceSection() {
 
                 {/* CTA */}
                 <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.4 }}
+                    initial={{opacity: 0, y: 20}}
+                    whileInView={{opacity: 1, y: 0}}
+                    transition={{delay: 0.4}}
                     className="flex flex-col sm:flex-row gap-4 justify-center items-center"
                 >
                     <a
-                        href="https://www.malt.com/profile/zachariedossantos"
+                        href={links.malt}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 rounded-lg px-8 py-3 font-semibold bg-[#FC4B08] text-white hover:bg-[#e04307] transition-colors shadow-md hover:shadow-lg"
                         aria-label="Voir le profil Malt de Zacharie Dos Santos"
                     >
-                        <svg
-                            width="20"
-                            height="20"
-                            viewBox="0 0 100 100"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                            aria-hidden="true"
-                        >
-                            <path
-                                d="M75.7 24.3a8.3 8.3 0 0 0-11.7 0L50 38.3 36 24.3a8.3 8.3 0 0 0-11.7 11.7L38.3 50 24.3 64a8.3 8.3 0 0 0 11.7 11.7L50 61.7l14 14A8.3 8.3 0 0 0 75.7 64L61.7 50l14-14a8.3 8.3 0 0 0 0-11.7z"
-                                fill="#fff"
-                            />
-                        </svg>
-                        Voir mon profil Malt
+                        <Button size="lg" className="bg-malt text-white hover:bg-malt/90">
+                            <MaltIcon className="size-6 fill-white"/>
+                            Voir mon profil Malt
+                        </Button>
                     </a>
                     <a
-                        href="mailto:zacharie21000@gmail.com"
-                        className="inline-flex items-center gap-2 rounded-lg px-8 py-3 font-semibold border border-primary/30 text-primary hover:bg-primary/10 transition-colors"
+                        href={`mailto:${links.email}`}
                         aria-label="Contacter Zacharie Dos Santos par email"
                     >
-                        <ExternalLink className="h-4 w-4" />
-                        Me contacter
+                        <Button variant="outline" size="lg">
+                            <ExternalLink className="size-6"/>
+                            Me contacter
+                        </Button>
+
                     </a>
                 </motion.div>
             </div>
