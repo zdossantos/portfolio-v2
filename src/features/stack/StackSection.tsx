@@ -57,18 +57,20 @@ const CategoryCard = ({ category, index }: { category: typeof categories[keyof t
 
 export default function StackSection() {
     return (
-        <section id="stack" className="relative min-h-screen flex items-center justify-center">
+        <section id="stack" className="relative min-h-screen flex items-center justify-center" aria-labelledby="stack-heading">
             <GridPattern opacity={0.3} className={cn(
                 "[mask-image:linear-gradient(to_bottom,transparent,white,white,transparent)] absolute inset-0",
                 "h-[110%] -top-[10%]"
             )}/>
             
             <div className="relative z-10 w-full max-w-7xl px-4 sm:px-8 py-8 sm:py-12">
-                <TextAnimate animation="blurInUp" by="word" duration={1} once className="text-3xl sm:text-4xl font-bold mb-4 text-center">
-                    Ma Stack Technique
-                </TextAnimate>
+                <div id="stack-heading">
+                    <TextAnimate animation="blurInUp" by="word" duration={1} once className="text-3xl sm:text-4xl font-bold mb-4 text-center">
+                        Ma Stack Technique
+                    </TextAnimate>
+                </div>
                 <TextAnimate animation="blurInUp" by="word" delay={1} once className="text-lg sm:text-xl mb-8 sm:mb-12 text-center text-muted-foreground">
-                    Les technologies que j'utilise au quotidien
+                    Vue.js, React, Next.js, Laravel, TypeScript — les technologies que j'utilise au quotidien pour livrer des applications web performantes
                 </TextAnimate>
                 
                 <div className="flex flex-col md:flex-row gap-6 sm:gap-8 items-center justify-center min-h-[calc(100vh-8rem)] sm:min-h-[calc(100vh-12rem)]">

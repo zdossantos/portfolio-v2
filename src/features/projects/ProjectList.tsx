@@ -31,11 +31,20 @@ export default function ProjectList() {
     return (
         <motion.section
             id="projects"
+            aria-labelledby="projects-heading"
             className="relative flex w-full flex-col items-center justify-center overflow-hidden py-8"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
         >
+            <div className="text-center mb-8 px-4 z-10 relative">
+                <h2 id="projects-heading" className="text-3xl sm:text-4xl font-bold mb-3">
+                    Mes Projets
+                </h2>
+                <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                    Applications web réalisées avec Vue.js, React, Laravel, Symfony et plus — du side-project au projet client
+                </p>
+            </div>
             <DotPattern opacity={0.3} className={cn(
                 "[mask-image:linear-gradient(to_bottom,transparent,white,white,transparent)] absolute inset-0",
                 "h-[110%] -top-[10%]"

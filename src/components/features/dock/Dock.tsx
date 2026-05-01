@@ -9,7 +9,7 @@ import { dockItems } from "./config";
 export function Dock() {
     return (
         <div className="fixed bottom-2 left-1/2 -translate-x-1/2 z-50">
-            <MagicDock iconMagnification={60} iconDistance={100}>
+            <MagicDock iconMagnification={60} iconDistance={100} >
                 {dockItems.map((item, index) => {
                     if (item.isSeparator) {
                         return <Separator key={index} orientation="vertical" />;

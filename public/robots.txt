@@ -1,7 +1,72 @@
 User-agent: *
 Allow: /
 Disallow: /api/
+Crawl-delay: 1
 
+# ──────────────────────────────────────────
+# Bots IA & LLM – autorisation explicite
+# ──────────────────────────────────────────
+
+# OpenAI (ChatGPT, GPT-4…)
+User-agent: GPTBot
+Allow: /
+
+# OpenAI – plugin/browsing
+User-agent: ChatGPT-User
+Allow: /
+
+# Anthropic (Claude)
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+# Google (Gemini / Search Generative Experience)
+User-agent: Google-Extended
+Allow: /
+
+# Perplexity AI
+User-agent: PerplexityBot
+Allow: /
+
+# Meta AI
+User-agent: FacebookBot
+Allow: /
+
+# Apple (Siri, Apple Intelligence)
+User-agent: Applebot-Extended
+Allow: /
+
+# Microsoft (Copilot / Bing AI)
+User-agent: bingbot
+Allow: /
+
+# Cohere AI
+User-agent: cohere-ai
+Allow: /
+
+# Common Crawl (données d'entraînement open-source)
+User-agent: CCBot
+Allow: /
+
+# Diffbot
+User-agent: Diffbot
+Allow: /
+
+# Bytedance / Doubao
+User-agent: Bytespider
+Allow: /
+
+# Amazon Alexa
+User-agent: Amazonbot
+Allow: /
+
+# ──────────────────────────────────────────
 # Sitemaps
+# ──────────────────────────────────────────
 Sitemap: https://zdossantos.fr/sitemap-index.xml
-Sitemap: https://www.zdossantos.fr/sitemap-index.xml
+
+# Fichier LLMs.txt (contexte structuré pour les IA)
+# https://zdossantos.fr/llms.txt
+

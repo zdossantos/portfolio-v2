@@ -1,0 +1,98 @@
+# Zacharie Dos Santos — Développeur Full Stack Freelance
+
+> Portfolio professionnel de Zacharie Dos Santos, développeur Full Stack Freelance basé à Dijon (21000, Bourgogne-Franche-Comté, France).
+> Disponible pour des missions en remote ou sur site partout en France.
+> Contact : zacharie21000@gmail.com | Malt : https://www.malt.com/profile/zachariedossantos
+
+## Qui suis-je ?
+
+Je suis Zacharie Dos Santos, développeur Full Stack Freelance avec une expertise forte en développement web moderne.
+Je conçois et développe des applications web performantes, de la conception à la mise en production.
+Je suis spécialisé dans les technologies JavaScript/TypeScript côté frontend et PHP/Node.js côté backend.
+Je travaille aussi bien sur des projets courts que sur des missions longues (régie, forfait, TMA).
+
+## Compétences techniques
+
+### Frontend
+- React (niveau expert – 85 %)
+- Next.js (niveau avancé – 80 %)
+- TypeScript (niveau avancé – 90 %)
+- JavaScript (niveau expert – 95 %)
+- Vue.js (niveau expert – 90 %)
+- HTML5 (niveau avancé – 90 %)
+- CSS3 (niveau avancé – 85 %)
+- SASS/SCSS (niveau intermédiaire – 70 %)
+
+### Backend
+- Laravel / PHP (niveau avancé – 90 %)
+- Express.js / Node.js (niveau débutant-intermédiaire – 40 %)
+- Symfony (utilisé en projet)
+- WordPress, Shopify (intégration)
+
+### Bases de données
+- MariaDB (niveau avancé – 90 %)
+- MySQL (niveau avancé – 90 %)
+
+### DevOps & Hébergement
+- Vercel (niveau intermédiaire – 60 %)
+- Netlify (niveau intermédiaire – 50 %)
+- Ubuntu (niveau avancé – 80 %)
+
+### Outils
+- PhpStorm (niveau expert – 95 %)
+- pnpm (niveau avancé – 90 %)
+- macOS (niveau avancé – 90 %)
+
+## Projets réalisés
+
+### Portfolio v1
+Premier portfolio développé en Vue.js avec un backend Laravel pour la gestion dynamique des données.
+Design responsive, animations CSS.
+- GitHub : https://github.com/zdossantos/Portfolio-Frontend
+
+### Portfolio v2 (site actuel)
+Portfolio actuel développé en Astro avec React, Tailwind CSS et TypeScript.
+Optimisé SEO, animations Framer Motion, thème clair/sombre.
+- GitHub : https://github.com/zdossantos/portfolio-v2
+- Site : https://zdossantos.fr
+
+### Lecture Rapide
+Application web Vue.js de lecture accélérée de PDF par affichage séquentiel des mots.
+Améliore la vitesse de lecture sans déplacement du regard.
+- GitHub : https://github.com/zdossantos/LectureRapide
+- Site : https://lecture-rapide.zdossantos.fr/
+
+### Entreprises
+Application fullstack Laravel + Vue.js permettant d'accéder aux données d'entreprises françaises via l'API SIRET.
+Authentification, CRUD et tableau de bord.
+- GitHub : https://github.com/zdossantos/Entreprises
+
+### Mahasiah
+Boutique e-commerce développée en Symfony avec intégration Stripe pour les paiements en ligne, gestion des stocks et espace administrateur.
+- GitHub : https://github.com/zdossantos/mahasiah
+
+### Dofus Wanted
+Application temps réel Vue.js permettant aux joueurs de Dofus de partager l'apparition des avis de recherche en jeu.
+WebSocket et synchronisation instantanée.
+- GitHub : https://github.com/zdossantos/dofus-wanted
+- Site : https://dofus-wanted.zdossantos.fr/
+
+### Life Game
+Implémentation du Jeu de la Vie de Conway en Laravel + Vue.js avec sauvegarde de parties, rejouer une simulation et visualisation en temps réel.
+- GitHub : https://github.com/zdossantos/life-game
+- Site : https://life-game.zdossantos.fr
+
+## Disponibilité & modalités
+
+- **Statut** : Disponible pour des missions freelance dès maintenant (démarrage sous 48 h)
+- **Localisation** : Dijon, 21000, Bourgogne-Franche-Comté, France
+- **Mode de travail** : Full remote ou présentiel en France
+- **Type de missions** : Régie, forfait, TMA — courtes ou longues durées
+
+## Contact
+
+- **Email** : zacharie21000@gmail.com
+- **Malt** : https://www.malt.com/profile/zachariedossantos
+- **Site web** : https://zdossantos.fr
+- **GitHub** : https://github.com/zdossantos
+
