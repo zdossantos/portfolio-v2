@@ -31,11 +31,13 @@ export default function ProjectList() {
     return (
         <motion.section
             id="projects"
+            aria-labelledby="projects-heading"
             className="relative flex w-full flex-col items-center justify-center overflow-hidden py-8"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
         >
+            <h2 id="projects-heading" className="sr-only">Mes projets</h2>
             <DotPattern opacity={0.3} className={cn(
                 "[mask-image:linear-gradient(to_bottom,transparent,white,white,transparent)] absolute inset-0",
                 "h-[110%] -top-[10%]"

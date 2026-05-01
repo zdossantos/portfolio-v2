@@ -158,7 +158,7 @@ const DockIcon = ({
 
   if (props.href) {
     return (
-      <a href={props.href} target={props.target}>
+      <a href={props.href} target={props.target} aria-label={tooltip} rel={props.target === "_blank" ? "noopener noreferrer" : undefined}>
         {wrappedContent}
       </a>
     );

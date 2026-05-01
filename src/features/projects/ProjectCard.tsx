@@ -34,6 +34,8 @@ export default function ProjectCard({ title, description, image, githubUrl, site
                     src={image} 
                     alt={title}
                     className="object-cover w-full h-full"
+                    loading="lazy"
+                    decoding="async"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
             </div>
@@ -46,29 +48,37 @@ export default function ProjectCard({ title, description, image, githubUrl, site
                     href={githubUrl}
                     target="_blank"
                     rel="noopener noreferrer"
+                    aria-label={`Voir le code source de ${title} sur GitHub`}
                     className="flex items-center gap-1 px-3 py-1.5 bg-white/10 hover:bg-white/20 rounded-lg transition-colors duration-300 text-sm"
                 >
-                    <Github size={14} />
+                    <Github size={14} aria-hidden="true" />
                     <span>Code</span>
                 </a>
                 <TooltipProvider>
                     <Tooltip>
                         <TooltipTrigger asChild>
-                            <a 
-                                href={siteUrl || '#'}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className={cn(
-                                    "flex items-center gap-1 px-3 py-1.5 rounded-lg transition-colors duration-300 text-sm",
-                                    siteUrl 
-                                        ? "bg-white/10 hover:bg-white/20"
-                                        : "bg-white/5 cursor-not-allowed"
-                                )}
-                                onClick={(e) => !siteUrl && e.preventDefault()}
-                            >
-                                <ExternalLink size={14} />
-                                <span>Site</span>
-                            </a>
+                            {siteUrl ? (
+                                <a
+                                    href={siteUrl}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    aria-label={`Visiter le site de ${title}`}
+                                    className="flex items-center gap-1 px-3 py-1.5 rounded-lg transition-colors duration-300 text-sm bg-white/10 hover:bg-white/20"
+                                >
+                                    <ExternalLink size={14} aria-hidden="true" />
+                                    <span>Site</span>
+                                </a>
+                            ) : (
+                                <button
+                                    disabled
+                                    aria-disabled="true"
+                                    aria-label={`Site de ${title} non disponible`}
+                                    className="flex items-center gap-1 px-3 py-1.5 rounded-lg transition-colors duration-300 text-sm bg-white/5 cursor-not-allowed"
+                                >
+                                    <ExternalLink size={14} aria-hidden="true" />
+                                    <span>Site</span>
+                                </button>
+                            )}
                         </TooltipTrigger>
                         {!siteUrl && (
                             <TooltipContent>
