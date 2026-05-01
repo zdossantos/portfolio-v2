@@ -17,9 +17,9 @@ export interface SkillItem {
 
 export const skills: SkillItem[] = [
     // Frontend (from most complex to simplest)
-    { id: 'nextjs', name: 'Next.js', icon: SiNextdotjs, level: 90, color: "var(--color-light)", category: 'frontend' },
-    { id: 'react', name: 'React', icon: SiReact, level: 95, color: '#61DAFB', category: 'frontend' },
-    { id: 'vue', name: 'Vue.js', icon: SiVuedotjs, level: 50, color: '#4FC08D', category: 'frontend' },
+    { id: 'nextjs', name: 'Next.js', icon: SiNextdotjs, level: 80, color: "var(--color-light)", category: 'frontend' },
+    { id: 'react', name: 'React', icon: SiReact, level: 85, color: '#61DAFB', category: 'frontend' },
+    { id: 'vue', name: 'Vue.js', icon: SiVuedotjs, level: 90, color: '#4FC08D', category: 'frontend' },
     { id: 'typescript', name: 'TypeScript', icon: SiTypescript, level: 90, color: '#3178C6', category: 'frontend' },
     { id: 'javascript', name: 'JavaScript', icon: SiJavascript, level: 95, color: '#F7DF1E', category: 'frontend' },
     { id: 'sass', name: 'SASS', icon: SiSass, level: 70, color: '#CC6699', category: 'frontend' },
