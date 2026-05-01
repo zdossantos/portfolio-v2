@@ -18,17 +18,17 @@ const highlights = [
     {
         icon: MapPin,
         title: "Dijon & Remote",
-        description: "Basé à Dijon (Bourgogne), j'interviens en remote ou sur site.",
+        description: "Basé à Dijon (Bourgogne), j'interviens principalement en remote.",
     },
     {
         icon: Briefcase,
         title: "Missions",
-        description: "Développement web fullstack : Vue.js, React, Next.js, Laravel, TypeScript.",
+        description: "Développement web fullstack : Vue.js, React, Next.js, Laravel, TypeScript, Wordpress, Shopify.",
     },
     {
         icon: Calendar,
         title: "Flexibilité",
-        description: "Missions courtes ou longues durées, en régie ou au forfait.",
+        description: "Principalement disponible pour des missions courtes, mais ouvert à tout type de projet.",
     },
 ];
 
@@ -49,15 +49,26 @@ export default function FreelanceSection() {
             <div className="relative z-10 w-full max-w-5xl px-4 sm:px-8">
                 {/* Header */}
                 <div className="text-center mb-12">
+                    <div className={"flex flex-col gap-1"}>
                     <TextAnimate
                         animation="blurInUp"
                         by="word"
                         duration={1}
                         once
-                        className="text-3xl sm:text-4xl font-bold mb-4"
+                        className="text-3xl sm:text-4xl font-bold mb-4 leading-0"
                     >
-                        Disponible en Freelance
+                        Disponible en
                     </TextAnimate>
+                    <TextAnimate
+                        animation="blurInUp"
+                        by="word"
+                        duration={1}
+                        once
+                        className="text-3xl sm:text-4xl font-bold mb-4 text-malt"
+                    >
+                        Freelance
+                    </TextAnimate>
+                    </div>
                     <TextAnimate
                         animation="blurInUp"
                         by="word"

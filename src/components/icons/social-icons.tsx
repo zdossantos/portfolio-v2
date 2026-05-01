@@ -14,5 +14,5 @@ export const Icons = {
         </svg>
     ),
     linkedin: (props: IconProps) => LinkedinIcon(props),
-    malt: (props: IconProps) => <MaltIcon {...props} />,
+    malt: (props: IconProps) => <MaltIcon {...props} className="fill-malt" />,
 }; 
