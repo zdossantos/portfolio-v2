@@ -77,7 +77,7 @@ export default function FreelanceSection() {
                         className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto"
                     >
                         Développeur freelance fullstack basé à Dijon, expert Vue.js, React, Next.js et Laravel.
-                        Missions en remote ou sur site — régie, forfait ou TMA. Contactez-moi pour démarrer votre
+                        Missions en remote ou sur site. Contactez-moi pour démarrer votre
                         projet.
                     </TextAnimate>
                 </div>
