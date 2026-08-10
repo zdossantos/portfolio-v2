@@ -17,7 +17,7 @@ const {
   title = "Zacharie Dos Santos – Développeur Freelance Fullstack à Dijon | Vue.js, React, Next.js, Laravel",
   description = "Zacharie Dos Santos, développeur web freelance fullstack basé à Dijon. Expert Vue.js, React, Next.js, Laravel et TypeScript. +5 ans d'expérience. Disponible pour vos missions freelance en remote ou sur site. Profil Malt vérifié.",
   canonical = "https://zdossantos.fr/",
-  ogImage = "https://zdossantos.fr/images/og-image.webp",
+  ogImage = "https://zdossantos.fr/images/profile.webp",
   ogImageAlt = "Zacharie Dos Santos – Développeur Freelance Fullstack à Dijon",
 } = Astro.props;
 
@@ -64,6 +64,27 @@ const jsonLdWebsite = {
   "author": {
     "@type": "Person",
     "name": "Zacharie Dos Santos"
+  }
+};
+
+const jsonLdWebPage = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": title,
+  "url": canonical,
+  "description": description,
+  "inLanguage": "fr-FR",
+  "isPartOf": {
+    "@type": "WebSite",
+    "url": "https://zdossantos.fr"
+  },
+  "about": {
+    "@type": "Person",
+    "name": "Zacharie Dos Santos"
+  },
+  "primaryImageOfPage": {
+    "@type": "ImageObject",
+    "url": ogImage
   }
 };
 
@@ -126,6 +147,7 @@ const jsonLdProfessionalService = {
     <meta name="keywords" content="développeur web Dijon, développeur freelance Dijon, développeur fullstack Dijon, freelance développeur web, mission freelance, Malt, développeur Malt, développeur Laravel Dijon, développeur Vue.js Dijon, développeur React Dijon, développeur Next.js Dijon, ReactJS, NextJS, TypeScript, Zacharie Dos Santos, portfolio développeur, développeur web Bourgogne, freelance développeur web Dijon, web developer Dijon France, disponible en freelance, vuejs, react, laravel, typescript, symfony, wordpress, shopify, node.js, développement web sur mesure, application web" />
     <meta name="author" content="Zacharie Dos Santos" />
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
     <meta name="language" content="French" />
     <meta name="rating" content="general" />
     <meta name="revisit-after" content="7 days" />
@@ -134,7 +156,8 @@ const jsonLdProfessionalService = {
     <meta name="geo.position" content="47.3220;5.0415" />
     <meta name="ICBM" content="47.3220, 5.0415" />
     <link rel="canonical" href={canonical} />
-    <link rel="alternate" href={canonical} hreflang="fr" />
+    <link rel="alternate" href={canonical} hreflang="fr-FR" />
+    <link rel="alternate" href={canonical} hreflang="x-default" />
 
     <!-- Google Search Console -->
     <meta name="google-site-verification" content="AKgIx9bxdB_uJ7h2DyJmHSRsBguhPl3Kh4SE84DXEu8" />
@@ -145,6 +168,9 @@ const jsonLdProfessionalService = {
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={ogImage} />
+    <meta property="og:image:url" content={ogImage} />
+    <meta property="og:image:secure_url" content={ogImage} />
+    <meta property="og:image:type" content="image/webp" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:image:alt" content={ogImageAlt} />
@@ -157,17 +183,20 @@ const jsonLdProfessionalService = {
     <meta name="twitter:creator" content="@ZacharieDS" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
+    <meta name="twitter:url" content={canonical} />
     <meta name="twitter:image" content={ogImage} />
     <meta name="twitter:image:alt" content={ogImageAlt} />
 
     <!-- Favicon & PWA -->
-    <link rel="icon" type="image/png" href="/images/profile.webp" />
+    <link rel="icon" type="image/jpeg" href="/images/github-avatar.jpg" />
+    <link rel="shortcut icon" href="/images/github-avatar.jpg" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="apple-touch-icon" href="/images/profile.webp" />
 
     <!-- JSON-LD Structured Data -->
     <script type="application/ld+json" set:html={JSON.stringify(jsonLdPerson)} />
     <script type="application/ld+json" set:html={JSON.stringify(jsonLdWebsite)} />
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLdWebPage)} />
     <script type="application/ld+json" set:html={JSON.stringify(jsonLdProfessionalService)} />
 </head>
 <body class="flex flex-col min-h-screen bg-background text-foreground">
