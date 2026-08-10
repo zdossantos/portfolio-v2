@@ -58,18 +58,20 @@ test.describe("Liens externes – présence et attributs", () => {
     await expect(maltLink).toHaveAttribute("rel", /noopener/);
   });
 
-  test("le lien GitHub (dock) est présent avec target=_blank", async ({
+  test("le lien GitHub (dock) est présent avec target=_blank et rel=noopener", async ({
     page,
   }) => {
     const ghLink = page.locator('a[href*="github.com/zdossantos"]').first();
     await expect(ghLink).toBeVisible();
     await expect(ghLink).toHaveAttribute("target", "_blank");
+    await expect(ghLink).toHaveAttribute("rel", /noopener/);
   });
 
-  test("le lien LinkedIn est présent avec target=_blank", async ({ page }) => {
+  test("le lien LinkedIn est présent avec target=_blank et rel=noopener", async ({ page }) => {
     const liLink = page.locator('a[href*="linkedin.com"]').first();
     await expect(liLink).toBeVisible();
     await expect(liLink).toHaveAttribute("target", "_blank");
+    await expect(liLink).toHaveAttribute("rel", /noopener/);
   });
 
   test("le lien mailto est présent", async ({ page }) => {
