@@ -1,0 +1,204 @@
+---
+import GoogleAnalytics from "./GoogleAnalytics.astro";
+import { siteEnv, siteMetadata } from "../config/site";
+
+interface Props {
+  title?: string;
+  description?: string;
+  canonical?: string;
+  ogImage?: string;
+  ogImageAlt?: string;
+}
+
+const {
+  title = siteMetadata.defaultTitle,
+  description = siteMetadata.defaultDescription,
+  canonical,
+  ogImage = siteMetadata.defaultOgImage,
+  ogImageAlt = siteMetadata.defaultOgImageAlt,
+} = Astro.props;
+
+const toAbsoluteUrl = (value: string) => {
+  if (/^https?:\/\//i.test(value)) {
+    return value;
+  }
+
+  return new URL(value, `${siteEnv.siteUrl}/`).toString();
+};
+
+const canonicalUrl = canonical ? toAbsoluteUrl(canonical) : `${siteEnv.siteUrl}/`;
+const ogImageUrl = toAbsoluteUrl(ogImage);
+
+const jsonLdPerson = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: siteMetadata.author,
+  url: siteEnv.siteUrl,
+  image: ogImageUrl,
+  sameAs: [
+    siteMetadata.socialLinks.github,
+    siteMetadata.socialLinks.twitter,
+    siteMetadata.socialLinks.malt,
+    siteMetadata.socialLinks.linkedin,
+  ],
+  jobTitle: siteMetadata.professional.title,
+  worksFor: {
+    "@type": "Organization",
+    name: siteMetadata.professional.organizationName,
+  },
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: siteMetadata.geo.city,
+    addressRegion: siteMetadata.geo.regionName,
+    addressCountry: siteMetadata.geo.country,
+  },
+  knowsAbout: siteMetadata.professional.skills,
+  description: siteMetadata.defaultDescription,
+  email: siteMetadata.professional.email,
+  nationality: siteMetadata.professional.nationality,
+};
+
+const jsonLdWebsite = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: siteMetadata.siteName,
+  url: siteEnv.siteUrl,
+  description:
+    "Portfolio de Zacharie Dos Santos, développeur web freelance fullstack à Dijon. Vue.js, React, Next.js, Laravel, TypeScript.",
+  inLanguage: "fr-FR",
+  author: {
+    "@type": "Person",
+    name: siteMetadata.author,
+  },
+};
+
+const jsonLdWebPage = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: title,
+  url: canonicalUrl,
+  description,
+  inLanguage: "fr-FR",
+  isPartOf: {
+    "@type": "WebSite",
+    url: siteEnv.siteUrl,
+  },
+  about: {
+    "@type": "Person",
+    name: siteMetadata.author,
+  },
+  primaryImageOfPage: {
+    "@type": "ImageObject",
+    url: ogImageUrl,
+  },
+};
+
+const jsonLdProfessionalService = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  name: siteMetadata.professional.serviceName,
+  url: siteEnv.siteUrl,
+  image: ogImageUrl,
+  description: siteMetadata.professional.description,
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: siteMetadata.geo.city,
+    addressRegion: siteMetadata.geo.regionName,
+    postalCode: siteMetadata.geo.postalCode,
+    addressCountry: siteMetadata.geo.country,
+  },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: siteMetadata.geo.latitude,
+    longitude: siteMetadata.geo.longitude,
+  },
+  areaServed: siteMetadata.professional.areasServed,
+  serviceType: siteMetadata.professional.serviceTypes,
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: siteMetadata.professional.offerCatalogName,
+    itemListElement: siteMetadata.professional.offers.map((offer) => ({
+      "@type": "Offer",
+      itemOffered: {
+        "@type": "Service",
+        name: offer,
+      },
+    })),
+  },
+  sameAs: [
+    siteMetadata.socialLinks.github,
+    siteMetadata.socialLinks.malt,
+    siteMetadata.socialLinks.linkedin,
+  ],
+};
+---
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content={siteMetadata.themeColor} />
+
+<link rel="preconnect" href="https://www.googletagmanager.com" />
+<link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+<link rel="preload" as="image" href="/images/profile.webp" fetchpriority="high" />
+
+<GoogleAnalytics />
+
+<title>{title}</title>
+<meta name="description" content={description} />
+<meta name="keywords" content={siteMetadata.keywords.join(", ")} />
+<meta name="author" content={siteMetadata.author} />
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+<meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+<meta name="language" content={siteMetadata.language} />
+<meta name="rating" content="general" />
+<meta name="revisit-after" content="7 days" />
+<meta name="geo.region" content={siteMetadata.geo.region} />
+<meta name="geo.placename" content={siteMetadata.geo.placename} />
+<meta name="geo.position" content={siteMetadata.geo.position} />
+<meta name="ICBM" content={siteMetadata.geo.icbm} />
+<link rel="canonical" href={canonicalUrl} />
+<link rel="alternate" href={canonicalUrl} hreflang="fr-FR" />
+<link rel="alternate" href={canonicalUrl} hreflang="x-default" />
+
+{siteEnv.googleSiteVerification && (
+  <meta
+    name="google-site-verification"
+    content={siteEnv.googleSiteVerification}
+  />
+)}
+
+<meta property="og:type" content="website" />
+<meta property="og:url" content={canonicalUrl} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={ogImageUrl} />
+<meta property="og:image:url" content={ogImageUrl} />
+<meta property="og:image:secure_url" content={ogImageUrl} />
+<meta property="og:image:type" content="image/webp" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content={ogImageAlt} />
+<meta property="og:locale" content={siteMetadata.locale} />
+<meta property="og:site_name" content={siteMetadata.siteName} />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content={siteMetadata.twitterHandle} />
+<meta name="twitter:creator" content={siteMetadata.twitterHandle} />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:url" content={canonicalUrl} />
+<meta name="twitter:image" content={ogImageUrl} />
+<meta name="twitter:image:alt" content={ogImageAlt} />
+
+<link rel="icon" type="image/jpeg" href="/images/github-avatar.jpg" />
+<link rel="shortcut icon" href="/images/github-avatar.jpg" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="apple-touch-icon" href="/images/profile.webp" />
+
+<script type="application/ld+json" set:html={JSON.stringify(jsonLdPerson)} />
+<script type="application/ld+json" set:html={JSON.stringify(jsonLdWebsite)} />
+<script type="application/ld+json" set:html={JSON.stringify(jsonLdWebPage)} />
+<script
+  type="application/ld+json"
+  set:html={JSON.stringify(jsonLdProfessionalService)}
+/>
