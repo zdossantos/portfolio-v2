@@ -26,7 +26,7 @@ const toAbsoluteUrl = (value: string) => {
   return new URL(value, `${siteEnv.siteUrl}/`).toString();
 };
 
-const canonicalUrl = canonical ? toAbsoluteUrl(canonical) : `${siteEnv.siteUrl}/`;
+const canonicalUrl = toAbsoluteUrl(canonical ?? Astro.url.pathname);
 const ogImageUrl = toAbsoluteUrl(ogImage);
 
 const jsonLdPerson = {

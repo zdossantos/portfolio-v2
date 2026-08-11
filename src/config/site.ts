@@ -1,4 +1,4 @@
-const DEFAULT_SITE_URL = "https://zdossantos.fr";
+const DEFAULT_SITE_URL = "https://www.zdossantos.fr";
 const DEFAULT_GOOGLE_SITE_VERIFICATION = "AKgIx9bxdB_uJ7h2DyJmHSRsBguhPl3Kh4SE84DXEu8";
 
 const rawSiteUrl = import.meta.env.PUBLIC_SITE_URL?.trim() || DEFAULT_SITE_URL;
