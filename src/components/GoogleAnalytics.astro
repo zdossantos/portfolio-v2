@@ -1,5 +1,7 @@
 ---
-const GA_ID = import.meta.env.PUBLIC_GA_ID?.trim();
+import { siteEnv } from "../config/site";
+
+const GA_ID = siteEnv.googleAnalyticsId;
 ---
 
 {GA_ID && (

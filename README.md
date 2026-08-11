@@ -38,6 +38,11 @@ Pour cloner et exécuter ce projet, suivez ces étapes :
 
 5. **Ouvrez votre navigateur** et accédez à `http://localhost:4321` pour voir votre portfolio en action.
 
+6. **Configurez les variables d'environnement publiques** :
+   ```bash
+   cp .env.example .env
+   ```
+
 ## Fonctionnalités
 
 - Présentation de mes compétences techniques.
