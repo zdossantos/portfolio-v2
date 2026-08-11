@@ -1,5 +1,11 @@
 # portfolio-v2
 
+## 0.0.3
+
+### Patch Changes
+
+- e785dc6: Create github-release.yml (#54)
+
 ## 0.0.2
 
 ### Patch Changes
