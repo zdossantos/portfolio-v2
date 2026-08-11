@@ -6,30 +6,30 @@ on:
       - develop
 
 concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}
+  group: release-${{ github.ref }}
   cancel-in-progress: true
+
+permissions:
+  contents: write
+  pull-requests: write
 
 jobs:
   release:
-    name: Release
+    name: Create Release PR
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
-      pull-requests: write
-    env:
-      HAS_CHANGESETS_GITHUB_TOKEN: ${{ secrets.CHANGESETS_GITHUB_TOKEN != '' }}
-      CHANGESETS_GITHUB_TOKEN: ${{ secrets.CHANGESETS_GITHUB_TOKEN }}
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      - uses: pnpm/action-setup@v4
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
         with:
           run_install: false
 
-      - name: Set up Node.js
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version-file: .nvmrc
@@ -38,23 +38,12 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Create Release Pull Request
-        id: release_pr
+      - name: Create Release PR
         uses: changesets/action@v1
-        continue-on-error: ${{ env.HAS_CHANGESETS_GITHUB_TOKEN != 'true' }}
         with:
-          pr-title: "chore: version packages"
-          commit-message: "chore: version packages"
-          pr-base-branch: main
-          github-token: ${{ env.HAS_CHANGESETS_GITHUB_TOKEN == 'true' && env.CHANGESETS_GITHUB_TOKEN || github.token || secrets.GITHUB_TOKEN}}
-
-      - name: Explain release PR token requirement
-        if: ${{ steps.release_pr.outcome == 'failure' && env.HAS_CHANGESETS_GITHUB_TOKEN != 'true' }}
-        run: |
-          {
-            echo "Changesets prepared the release branch but could not open the release pull request with the default GitHub Actions token."
-            echo
-            echo "To re-enable automatic release PR creation, either:"
-            echo '- enable "Allow GitHub Actions to create and approve pull requests" in repository Actions settings; or'
-            echo "- add a CHANGESETS_GITHUB_TOKEN secret backed by a PAT or GitHub App token with pull request permissions."
-          } >> "$GITHUB_STEP_SUMMARY"
+          title: "chore: version packages"
+          commit: "chore: version packages"
+          version: pnpm changeset version
+          base: main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
