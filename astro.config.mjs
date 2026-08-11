@@ -21,5 +21,5 @@ export default defineConfig({
     sitemap()
   ],
 
-  site: process.env.PUBLIC_SITE_URL || 'https://zdossantos.fr',
+  site: process.env.PUBLIC_SITE_URL || 'https://www.zdossantos.fr',
 });

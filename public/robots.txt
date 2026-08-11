@@ -64,8 +64,7 @@ Allow: /
 # ──────────────────────────────────────────
 # Sitemaps
 # ──────────────────────────────────────────
-Sitemap: https://zdossantos.fr/sitemap-index.xml
+Sitemap: https://www.zdossantos.fr/sitemap-index.xml
 
 # Fichier LLMs.txt (contexte structuré pour les IA)
 # https://zdossantos.fr/llms.txt
-
