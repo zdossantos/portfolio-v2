@@ -46,7 +46,7 @@ jobs:
           pr-title: "chore: version packages"
           commit-message: "chore: version packages"
           pr-base-branch: main
-          github-token: ${{ env.HAS_CHANGESETS_GITHUB_TOKEN == 'true' && env.CHANGESETS_GITHUB_TOKEN || github.token }}
+          github-token: ${{ env.HAS_CHANGESETS_GITHUB_TOKEN == 'true' && env.CHANGESETS_GITHUB_TOKEN || github.token || secrets.GITHUB_TOKEN}}
 
       - name: Explain release PR token requirement
         if: ${{ steps.release_pr.outcome == 'failure' && env.HAS_CHANGESETS_GITHUB_TOKEN != 'true' }}
