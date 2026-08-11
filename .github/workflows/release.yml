@@ -16,6 +16,9 @@ jobs:
     permissions:
       contents: write
       pull-requests: write
+    env:
+      HAS_CHANGESETS_GITHUB_TOKEN: ${{ secrets.CHANGESETS_GITHUB_TOKEN != '' }}
+      CHANGESETS_GITHUB_TOKEN: ${{ secrets.CHANGESETS_GITHUB_TOKEN }}
 
     steps:
       - uses: actions/checkout@v4
@@ -38,16 +41,15 @@ jobs:
       - name: Create Release Pull Request
         id: release_pr
         uses: changesets/action@v1
-        continue-on-error: ${{ secrets.CHANGESETS_GITHUB_TOKEN == '' }}
+        continue-on-error: ${{ env.HAS_CHANGESETS_GITHUB_TOKEN != 'true' }}
         with:
-          title: "chore: version packages"
-          commit: "chore: version packages"
-          branch: main
-        env:
-          GITHUB_TOKEN: ${{ secrets.CHANGESETS_GITHUB_TOKEN != '' && secrets.CHANGESETS_GITHUB_TOKEN || github.token }}
+          pr-title: "chore: version packages"
+          commit-message: "chore: version packages"
+          pr-base-branch: main
+          github-token: ${{ env.HAS_CHANGESETS_GITHUB_TOKEN == 'true' && env.CHANGESETS_GITHUB_TOKEN || github.token }}
 
       - name: Explain release PR token requirement
-        if: ${{ steps.release_pr.outcome == 'failure' && secrets.CHANGESETS_GITHUB_TOKEN == '' }}
+        if: ${{ steps.release_pr.outcome == 'failure' && env.HAS_CHANGESETS_GITHUB_TOKEN != 'true' }}
         run: |
           {
             echo "Changesets prepared the release branch but could not open the release pull request with the default GitHub Actions token."
